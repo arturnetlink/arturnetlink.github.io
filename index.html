@@ -12,15 +12,18 @@
 <script>
     // Ждем, пока iframe полностью загрузится
     document.getElementById('yourIframe').onload = function() {
-        // Получаем доступ к содержимому iframe
-        var iframeDocument = document.getElementById('yourIframe').contentDocument;
+        // Добавляем небольшую задержку (например, 500 миллисекунд), чтобы удостовериться, что iframe готов
+        setTimeout(function() {
+            // Получаем доступ к содержимому iframe
+            var iframeDocument = document.getElementById('yourIframe').contentDocument;
 
-        // Изменяем значение строки внутри iframe
-        var inputElement = iframeDocument.querySelector('input[name="homeserver"]');
+            // Изменяем значение строки внутри iframe
+            var inputElement = iframeDocument.querySelector('input[name="homeserver"]');
 
-        if (inputElement) {
-            inputElement.value = 'mess.ru';
-        }
+            if (inputElement) {
+                inputElement.value = 'mess.ru';
+            }
+        }, 1000);
     };
 </script>
 
