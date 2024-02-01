@@ -10,14 +10,15 @@
 <iframe id="yourIframe" height="100%" src="https://app.cinny.in/" width="100%"></iframe>
 
 <script>
+    // Ждем, пока iframe полностью загрузится
     document.getElementById('yourIframe').onload = function() {
+        // Получаем доступ к содержимому iframe
         var iframeDocument = document.getElementById('yourIframe').contentDocument;
 
-        var labelElement = iframeDocument.querySelector('.input__label.text-b2');
+        // Изменяем значение строки внутри iframe
         var inputElement = iframeDocument.querySelector('input[name="homeserver"]');
 
-        if (labelElement && inputElement) {
-            labelElement.innerText = 'mess.ru';
+        if (inputElement) {
             inputElement.value = 'mess.ru';
         }
     };
