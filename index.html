@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
 </head>
 <body>
@@ -11,12 +10,9 @@
 <iframe id="yourIframe" height="100%" src="https://app.cinny.in/" width="100%"></iframe>
 
 <script>
-    // Ждем, пока iframe полностью загрузится
     document.getElementById('yourIframe').onload = function() {
-        // Получаем доступ к содержимому iframe
         var iframeDocument = document.getElementById('yourIframe').contentDocument;
 
-        // Изменяем значение строки внутри iframe
         var labelElement = iframeDocument.querySelector('.input__label.text-b2');
         var inputElement = iframeDocument.querySelector('input[name="homeserver"]');
 
